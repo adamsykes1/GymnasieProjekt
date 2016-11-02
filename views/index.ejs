@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>News</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:500,700" rel="stylesheet">
+  <script src="https://use.fontawesome.com/886e67ac7b.js"></script>
+  <script src="../app.js"></script>
+</head>
+
+<body>
+  <div class="open-menu">
+    &#9776;
+  </div>
+  <nav>
+    <h2>FILMERIAN</h2>
+    <ul>
+      <li><a href="#"><i class="fa fa-newspaper-o fa-fw" aria-hidden="true"></i>&nbsp;Nyheter</a></li>
+      <li><a href="#"><i class="fa fa-desktop fa-fw" aria-hidden="true"></i>&nbsp;Recensioner</a></li>
+      <!-- <li class="drop-menu-Wrap"><a href='#' id="drop-click">Andra</i></a>
+      <ul class="drop-menu">
+      <li><a href="#">Newest</a></li>
+      <li><a href="#">Placeholder</a></li>
+      <li><a href="#">Placeholder</a></li>
+      <li><a href="#">Placeholder</a></li>
+      </ul>
+      </li> -->
+    </ul>
+  </nav>
+  <div class="aligner">
+    <div class="slideshow-container">
+      <div class="slides fade">
+        <div class="info">
+          <span>bananbajs</span>
+          <p>Bananen klämms när man öppnar och bananen blir mosad. bananbajs. kommande skräckfilm</p>
+          <a href="" class="read_more">Read More</a>
+        </div>
+        <img src="assets/images/bounre.jpg" alt="">
+      </div>
+      <div class="slides fade">
+        <div class="info">
+          <span>yolo</span>
+          <p>Man lever bara en gång, så adolf tar det lugnt i denna kommande storfilm om livet.</p>
+          <a href="" class="read_more">Read More</a>
+        </div>
+        <img src="assets/images/madmax.jpg" alt="">
+      </div>
+      <div class="slides fade">
+        <div class="info">
+          <h3>mah maan</h3>
+          <p>två kompanjoner som injectar tillsammans. Läs reviewn om sommarfiaskot</p>
+          <a href="" class="read_more">Read More</a>
+        </div>
+        <img src="assets/images/strange.jpeg" alt="">
+      </div>
+      <div class="ss-controlls">
+        <!-- <a class="prevbtn" onclick="plusSlides(-1)">❮</a> -->
+        <span class="ss_square" onclick="currentSlide(1)"></span>
+        <span class="ss_square" onclick="currentSlide(2)"></span>
+        <span class="ss_square" onclick="currentSlide(3)"></span>
+        <!-- <a class="nextbtn" onclick="plusSlides(1)">❯</a> -->
+      </div>
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="section-title">Nyheter</div>
+        <% for (var i = 0; i < content.length; i++){ %>
+          <div class="news-card-item" style="background: url('<%= content[i].picture %>') no-repeat center">
+            <h2><%= content[i].title  %></h2>
+            <div class="content">
+              <p>
+                <%= content[i].summary %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+      </div>
+      <div class="container">
+        <div class="section-title">Recensioner</div>
+        <div class="news-card-item" style="background: url('assets/images/strange.jpeg') no-repeat center">
+          <span>Big boy home boy</span>
+        </div>
+        <div class="news-card-item" style="background: url('assets/images/strange.jpeg') no-repeat center">
+          <span>Big boy home boy</span>
+        </div>
+        <div class="news-card-item" style="background: url('assets/images/strange.jpeg') no-repeat center">
+          <span>Big boy home boy</span>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="assets/scripts/jquery.min.js"></script>
+  <script src="assets/scripts/script.js"></script>
+</body>
+
+</html>

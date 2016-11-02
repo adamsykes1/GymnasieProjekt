@@ -1,0 +1,22 @@
+@import helper/variables
+@import helper/placeholder
+@import helper/mixins
+
+html
+  margin: 0
+body
+  font-family: $main-font
+  background: $bg
+  margin: 0
+
+@import layout/nav
+@import layout/slideshow
+.aligner
+  width: 86%
+  margin-left: 14%
+  @media screen and (max-width: 1050px)
+    width: 100%
+    margin-left: 0
+
+@import layout/news-card
+@import layout/trending
