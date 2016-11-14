@@ -10,21 +10,31 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://filmerian:cunt@ds055862.mlab.com:55862/filmerian');
 
 //schema for db
-var newsCards = new mongoose.Schema({
+var article = new mongoose.Schema({
   picture: String,
-  title: String,
-  summary: String,
+  content: {
+    title: String,
+    summary: String,
+    text: String
+  },
+  author: String,
   date: {
     type: Date,
     default: Date.now
   }
 });
 
-var News = mongoose.model('News', newsCards);
+var News = mongoose.model('News', article);
 
 // //test
-// var data = News({picture: 'assets/images/strange.jpeg', title: 'bananbajs',
-// summary: 'bananbajs, kommande film om det hårda livet.'}).save(function(err){
+// var data = News({
+//   picture: 'assets/images/strange.jpeg',
+//   content:  {
+//     title: "Snabba Cash",
+//     summary: "bananbajs, kommande film om det hårda livet.",
+//     text: "wdwdwdwdwdwdwdwdwdwwddwd",
+//   }
+// }).save(function(err) {
 //   if (err) throw err;
 //   console.log('item saved');
 // });
@@ -36,7 +46,26 @@ app.get('/', function(req, res) {
   News.find({}, function(err, data) {
     if (err) throw err;
     res.render('index', {
-      content: data
+      news: data
+    });
+  });
+});
+
+// app.get('/nyheter', function(req, res){
+//   News.find({}, function(err, data) {
+//     if (err) throw err;
+//     res.render('news', {
+//       news: data
+//     });
+//   });
+// });
+
+app.get('/nyheter/:id', function(req, res){
+  var id = req.params.id;
+  News.find({}, function(err, data) {
+    if (err) throw err;
+    res.render('news', {
+      news: data
     });
   });
 });

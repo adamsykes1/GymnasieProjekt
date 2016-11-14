@@ -1,45 +1,54 @@
 main
   display: flex
   flex-flow: column
-  justify-content: space-around
   background: $bg
 
 .container
   margin-top: 4%
   box-sizing: border-box
-  padding: 0 10px 10px
+  // margin: 0 5%
+  // padding: 0 10px 10px 10px
   display: flex
   flex-flow: wrap
-  justify-content: space-around
+  justify-content: space-between
   width: 100%
-  background: lighten($bg, 2%)
+  // background: lighten($bg, 2%)
   &:first-child
     margin-top: 0
 
+.test
+  width: 1%
+  height: 100%
+  margin: auto 1%
+  text-align: center
+
 .news-card-item
+  // float: left
   box-sizing: border-box
   z-index: 500
-  flex-grow: 1
+  // flex-grow: 1
   height: 15vw
+  width: 30%
   position: relative
-  margin: 2px
-  overflow: hidden
   img
     height: 100%
     top: 0
   .content
+    box-sizing: border-box
     opacity: 0
     height: 100%
     width: 100%
     background: rgba(0, 0, 0, 1)
-    top: 15%;
     position: absolute
     color: #fff
     padding: 3px 0
-    transition: opacity .4s ease-out
+    transition: opacity .3s ease-in-out
+    z-index: 400
   &:hover .content
     opacity: 0.8
-    transition-delay: .7s
+    transition-delay: .5s
+  p
+    padding: 5px 10px
   h2
     font-size: 18px
     text-transform: uppercase
@@ -47,30 +56,28 @@ main
     color: #fff
     background: orangered
     // bottom: 0
-    top: 85%
+    bottom: 0
     position: absolute
-    height: 15%
+    // height: 15%
     width: 100%
     margin: 0
-    padding: 5px 0
+    padding: 5px 10px
     transition: top .4s ease-out
+    z-index: 500
   &:hover h2
-    top: 0
+    // top: 0
     transition-delay: .3s
-  p
-    padding: 0
   &:last-child
-    margin-right: 0
+
 
 
 
 .section-title
   width: 100%
-  // flex-basis: 0
   display: block
   text-align: left
   font-weight: 700
   text-transform: uppercase
-  margin: 10px 0
+  margin: 10px 4%
   color: #fff
   font-family: 'Roboto', 'sans-serif'

@@ -19,16 +19,8 @@
   <nav>
     <h2>FILMERIAN</h2>
     <ul>
-      <li><a href="#"><i class="fa fa-newspaper-o fa-fw" aria-hidden="true"></i>&nbsp;Nyheter</a></li>
+      <li><a href="nyheter"><i class="fa fa-newspaper-o fa-fw" aria-hidden="true"></i>&nbsp;Nyheter</a></li>
       <li><a href="#"><i class="fa fa-desktop fa-fw" aria-hidden="true"></i>&nbsp;Recensioner</a></li>
-      <!-- <li class="drop-menu-Wrap"><a href='#' id="drop-click">Andra</i></a>
-      <ul class="drop-menu">
-      <li><a href="#">Newest</a></li>
-      <li><a href="#">Placeholder</a></li>
-      <li><a href="#">Placeholder</a></li>
-      <li><a href="#">Placeholder</a></li>
-      </ul>
-      </li> -->
     </ul>
   </nav>
   <div class="aligner">
@@ -68,17 +60,26 @@
 
     <main>
       <div class="container">
+
         <div class="section-title">Nyheter</div>
-        <% for (var i = 0; i < content.length; i++){ %>
-          <div class="news-card-item" style="background: url('<%= content[i].picture %>') no-repeat center">
-            <h2><%= content[i].title  %></h2>
-            <div class="content">
-              <p>
-                <%= content[i].summary %>
-              </p>
-            </div>
+        <div class="test">
+        <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+      </div>
+        <% for (var i = 0; i < news.length; i++){ %>
+          <div class="news-card-item" style="background: url('<%= news[i].picture %>') no-repeat center">
+            <a href="nyheter/<%= news[i].id %>">
+              <h2><%= news[i].content.title  %></h2>
+              <div class="content">
+                <p>
+                  <%= news[i].content.summary %>
+                </p>
+              </div>
+            </a>
           </div>
           <% } %>
+        <div class="test">
+            <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+        </div>
       </div>
       <div class="container">
         <div class="section-title">Recensioner</div>
